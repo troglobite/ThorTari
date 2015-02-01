@@ -1,16 +1,11 @@
-repeat = "true"
-while repeat == "true":
-	guess = raw_input("guess a number (1-10) ")
-	if guess == 3:
-		print 'correct '
-		break
-	if guess > 3:
-		print 'too high, '
-		repeat = raw_input ("repeat? true or false: ")
-		if repeat == "false":
-			break
-	if guess < 3:
-		print 'too low, ' 
-		repeat = raw_input ("repeat? true or false: ")
-		if repeat == "false":
-			break		
+response = None
+answer = 3
+while response != ' correct ':
+	guess = int(raw_input("guess a number (1-10) "))
+	if guess > answer:
+		response = ' too high '	
+	elif guess < answer:
+		response = ' too low '
+	else:
+		response = ' correct '
+	print response
